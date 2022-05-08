@@ -8,6 +8,9 @@ use space\yurisi\beat\Beat;
 
 class helpSubCommand implements SubCommand {
     public function execute(Beat $beat, CommandSender $sender, array $args) {
-        //todo
+        $sender->sendMessage(Beat::INFO . '/beat');
+        $sender->sendMessage(Beat::INFO . 'install [poggitPlugin or URL] - プラグインをインストールする');
+        $sender->sendMessage(Beat::INFO . 'remove [packageName] - プラグインをアンインストールする');
+        $sender->sendMessage(Beat::INFO . 'list - プラグインリストを参照する');
     }
 }

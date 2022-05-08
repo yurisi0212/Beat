@@ -5,6 +5,7 @@ namespace space\yurisi\beat\command;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\defaults\VanillaCommand;
+use pocketmine\console\ConsoleCommandSender;
 use space\yurisi\beat\Beat;
 use space\yurisi\beat\command\subcommand\helpSubCommand;
 use space\yurisi\beat\command\subcommand\installSubCommand;
@@ -21,6 +22,7 @@ class beatCommand extends VanillaCommand {
 
 
     public function execute(CommandSender $sender, string $commandLabel, array $args) {
+        if(!$sender instanceof ConsoleCommandSender) return;
         if(!isset($args[0]) || $args[0] === 'help'){
             (new helpSubCommand())->execute($this->beat, $sender, $args);
         }

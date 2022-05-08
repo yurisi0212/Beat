@@ -8,6 +8,10 @@ use space\yurisi\beat\command\beatCommand;
 
 class Beat extends PluginBase {
 
+    public const INFO = "§bBeat >> ";
+    public const ALERT = "§cBeat >> ";
+
+
     protected function onEnable(): void {
         @mkdir($this->getDataFolder(). 'plugins');
         $this->getServer()->getCommandMap()->registerAll('beat', [
